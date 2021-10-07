@@ -1,3 +1,8 @@
 {
-  "jwtSecret": "secret"
+  "jwtSecret": "secret",
+  "user": "postgres",
+  "host": "localhost",
+  "database": "contactapi",
+  "password": "123456",
+  "port": 5432
 }

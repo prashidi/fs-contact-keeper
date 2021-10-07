@@ -13,7 +13,7 @@ const ContactForm = () => {
         name: "",
         email: "",
         phone: "",
-        type: "personal",
+        contact_type: "personal",
       });
     }
   }, [contactContext, current]);
@@ -22,10 +22,10 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    type: "personal",
+    contact_type: "personal",
   });
 
-  const { name, email, phone, type } = contact;
+  const { name, email, phone, contact_type } = contact;
 
   const onChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -38,7 +38,7 @@ const ContactForm = () => {
         name: "",
         email: "",
         phone: "",
-        type: "personal",
+        contact_type: "personal",
       });
     } else {
       updateContact(contact);
@@ -79,18 +79,18 @@ const ContactForm = () => {
       Personal{" "}
       <input
         type='radio'
-        name='type'
+        name='contact_type'
         value='personal'
-        checked={type === "personal"}
+        checked={contact_type === "personal"}
         placeholder='Name'
         onChange={onChange}
       />{" "}
       Professional{" "}
       <input
         type='radio'
-        name='type'
+        name='contact_type'
         value='professional'
-        checked={type === "professional"}
+        checked={contact_type === "professional"}
         placeholder='Name'
         onChange={onChange}
       />
@@ -98,12 +98,12 @@ const ContactForm = () => {
         <input
           type='submit'
           value={current ? "Update Contact" : "Add Contact"}
-          className='btn btn-primary btn-dark'
+          className='btn btn-primary btn-dark btn-block'
         />
       </div>
       {current && (
         <div>
-          <button className='btn btn-light' onClick={clearAll}>
+          <button className='btn btn-light btn-block' onClick={clearAll}>
             Clear
           </button>
         </div>

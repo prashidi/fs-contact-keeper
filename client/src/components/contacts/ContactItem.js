@@ -4,9 +4,9 @@ import ContactContext from "../../context/contacts/contactContext";
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
-  const { deleteContact, setCurrent, clearCurrent } = contactContext;
+  const { deleteContact, setCurrent } = contactContext;
 
-  const { id, name, email, phone, type } = contact;
+  const { id, name, email, phone, contact_type } = contact;
 
   const onDelete = () => {
     deleteContact(id);
@@ -19,10 +19,12 @@ const ContactItem = ({ contact }) => {
           style={{ float: "right" }}
           className={
             "badge " +
-            (type === "professional" ? "badge-success" : "badge-primary")
+            (contact_type === "professional"
+              ? "badge-success"
+              : "badge-primary")
           }
         >
-          {type.charAt(0).toUpperCase() + type.slice(1)}
+          {contact_type.charAt(0).toUpperCase() + contact_type.slice(1)}
         </span>
       </h3>
       <ul className='list'>
