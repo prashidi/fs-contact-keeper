@@ -1,8 +1,11 @@
 {
   "name": "contact-keeper",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "This is a contact keeper",
   "main": "server.js",
+   "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
